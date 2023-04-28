@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+// font-family: 'Shadows Into Light', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+// font-family: 'Satisfy', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+// font-family: 'Pacifico', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+// font-family: 'Dancing Script', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap");
+// font-family: 'Passions Conflict', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+// font-family: 'Roboto', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+// font-family: 'Roboto Condensed', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+// font-family: 'Inter', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+// font-family: 'Play', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap");
+// font-family: 'Red Hat Display', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+// font-family: 'Permanent Marker', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
+// font-family: 'Rubik Wet Paint', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+// font-family: 'Concert One', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display&display=swap");
+// font-family: 'Noto Sans Display', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex&display=swap");
+// font-family: 'Roboto Flex', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap");
+// font-family: 'Rubik Iso', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+// font-family: 'Architects Daughter', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+// font-family: 'Itim', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap");
+// font-family: 'Caveat Brush', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+// font-family: 'Pangolin', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap");
+// font-family: 'Cabin Sketch', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+// font-family: 'Rubik Moonrocks', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Delius&display=swap");
+// font-family: 'Delius', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+// font-family: 'Silkscreen', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap");
+// font-family: 'Rubik Spray Paint', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&display=swap");
+// font-family: 'Averia Sans Libre', cursive;
+
+:root {
+  --font-color-main: rgb(16, 255, 215);
+  --keyboard-button-color: rgb(179, 255, 242);
+  --keyboard-button-color-active: rgb(148, 5, 50);
+  --textarea-border-color: rgb(179, 255, 242);
+  --textarea-border-shadow: rgb(16, 255, 215);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: var(--font-color-main);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.keyboard {
+  &_body {
+    width: 100%;
+    background-image: url('../refs/pics/bricks_wall_003.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &_wrapper {
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  &_plate {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    border: 10px solid var(--textarea-border-color);
+    box-shadow: 0 0 30px var(--textarea-border-shadow), inset 0 0 30px var(--textarea-border-shadow);
+    border-radius: 20px;
+    padding: 1vw;
+    row-gap: 0.5vw;
+    column-gap: 0.5vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_cherry_textarea_wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_cherry_neon {
+    width: 300px;
+    height: 300px;
+    background-image: url('../refs/icons/cherry_001.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    resize: both;
+    margin-top: 100px;
+    margin-right: 8vw;
+  }
+
+  &_textarea {
+    margin-top: 100px;
+    width: 50vw;
+    background-color: transparent;
+    border: 10px solid var(--textarea-border-color);
+    box-shadow: 0 0 30px var(--textarea-border-shadow), inset 0 0 30px var(--textarea-border-shadow);
+    border-radius: 20px;
+  }
+
+  &_button {
+    width: 5vw;
+    height: 5vw;
+    border: 2px solid var(--textarea-border-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
