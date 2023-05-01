@@ -58,7 +58,7 @@ export const buttonsEng = [
   "ctrl",
   "win",
   "alt",
-  " ",
+  "give some space",
   "alt",
   "ctrl",
   "◀",
