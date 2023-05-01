@@ -97,12 +97,13 @@ keyboardLang.textContent = "to change language press Ctrl+Shift";
 
 let lang = 1;
 
-document.addEventListener("keydown", typeText);
+window.addEventListener("keydown", typeText);
+// let e = new KeyboardEvent;
 
 function typeText(e) {
   const result = "";
   for (let i = 0; i < buttonsEng.length; i++) {
-    if (e.keyCode === +keyCodes[i]) {
+    if (e?.keyCode === +keyCodes[i]) {
       keyboardTextarea.value += `${result + buttonsEng[i]}`;
     }
   }
