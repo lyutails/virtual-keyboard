@@ -114,7 +114,6 @@ typeText();
 function clickText() {
   const result = "";
   const allButtons = document.querySelectorAll('.keyboard_button');
-  console.log(allButtons);
   for (let i = 0; i < allButtons.length; i++) {
     allButtons[i].addEventListener('click', () => {
       keyboardTextarea.value += `${result + allButtons[i].textContent}`;
