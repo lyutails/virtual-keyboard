@@ -23,7 +23,7 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'index.html',
-            favicon: './refs/favicons/keyboard_001.svg',
+            favicon: './refs/favicons/keyboard_006.svg',
         }),
 
         // Add your plugins here
