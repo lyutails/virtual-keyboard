@@ -104,7 +104,6 @@ keyboardWrapper.append(keyboardLang);
 keyboardLang.textContent = "to change language press Ctrl+Shift";
 
 window.addEventListener("keydown", typeText);
-// let e = new KeyboardEvent;
 
 function typeText(e) {
   const result = "";
