@@ -18,6 +18,14 @@ keyboardCherryNeon.classList.add("keyboard_cherry_neon");
 cherryTextareaWrapper.append(keyboardCherryNeon);
 keyboardCherryNeon.href = "https://github.com/lyutails/";
 
+const cherryBranchLeaf = document.createElement('span');
+cherryBranchLeaf.classList.add('keyboard_cherry_branch_leaf');
+keyboardCherryNeon.append(cherryBranchLeaf);
+
+const cherryBerries = document.createElement('span');
+cherryBerries.classList.add('keyboard_cherry_berries');
+keyboardCherryNeon.append(cherryBerries);
+
 const keyboardTextarea = document.createElement("textarea");
 keyboardTextarea.classList.add("keyboard_textarea");
 cherryTextareaWrapper.append(keyboardTextarea);
@@ -95,8 +103,6 @@ keyboardLang.classList.add("keyboard_lang");
 keyboardWrapper.append(keyboardLang);
 keyboardLang.textContent = "to change language press Ctrl+Shift";
 
-let lang = 1;
-
 window.addEventListener("keydown", typeText);
 // let e = new KeyboardEvent;
 
@@ -122,6 +128,10 @@ function clickText() {
 }
 
 clickText();
+
+// let lang = 1;
+
+// const lang = localStorage.getItem('lang') ?? 'eng'
 
 // window.addEventListener("keydown", changeLang);
 

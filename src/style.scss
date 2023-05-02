@@ -143,14 +143,127 @@ html {
   &_cherry_neon {
     width: 25vw;
     height: 25vw;
-    background-image: url("../refs/icons/cherry_001.svg");
+    // background-image: url("../refs/icons/cherry_001.svg");
     background-size: contain;
-    background-repeat: no-repeat;
-    resize: both;
+    // background-repeat: no-repeat;
+    // resize: both;
     margin-top: 100px;
     margin-right: 5vw;
-    mix-blend-mode: soft-light;
+    // mix-blend-mode: soft-light;
     text-decoration: none;
+  }
+
+  &_cherry_branch_leaf {
+    width: 25vw;
+    height: 55%;
+    display: inline-block;
+    background-image: url('../refs/icons/cherry_branch_leaf_neon_light_01.svg');
+    background-repeat: no-repeat;
+    resize: both;
+    filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 15px rgb(0, 255, 76));
+    animation-name: cherry_branch_leaf_anim;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes cherry_branch_leaf_anim {
+    0% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 15px rgb(0, 255, 76));
+    }
+    15% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.4));
+    }
+    25% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 15px rgba(0, 255, 76, 0.8));
+    }
+    35% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.4));
+    }
+    45% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 15px rgba(0, 255, 76, 1));
+    }
+    55% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.2));
+    }
+    60% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 15px rgba(0, 255, 76, 1));
+    }
+    60% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.2));
+    }
+    65% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 15px rgba(0, 255, 76, 0.8));
+    }
+    75% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.4));
+    }
+    85% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 15px rgba(0, 255, 76, 0.8));
+    }
+    95% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.4));
+    }
+    100% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76)) drop-shadow(0px 0px 15px rgba(0, 255, 76, 1));
+    }
+  }
+
+  &_cherry_berries {
+    width: 25vw;
+    height: 45%;
+    display: inline-block;
+    background-image: url('../refs/icons/cherry_berries_neon_light_01.svg');
+    background-repeat: no-repeat;
+    resize: both;
+    transform: translate(0px, -12px);
+    filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 15px rgb(255, 0, 93));
+    animation-name: cherry_berries_anim;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes cherry_berries_anim {
+    0% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 15px rgb(255, 0, 93));
+    }
+    15% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.4));
+    }
+    25% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 15px rgba(255, 0, 93, 0.8));
+    }
+    35% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.4));
+    }
+    45% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 15px rgba(255, 0, 93, 1));
+    }
+    55% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.2));
+    }
+    60% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 15px rgba(255, 0, 93, 1));
+    }
+    60% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.2));
+    }
+    65% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 15px rgba(255, 0, 93, 0.8));
+    }
+    75% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.4));
+    }
+    85% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 15px rgba(255, 0, 93, 0.8));
+    }
+    95% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.4));
+    }
+    100% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93)) drop-shadow(0px 0px 15px rgba(255, 0, 93, 1));
+    }
   }
 
   &_textarea {
