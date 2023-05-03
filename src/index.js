@@ -108,7 +108,10 @@ window.addEventListener("keydown", typeText);
 function typeText(e) {
   const result = "";
   for (let i = 0; i < buttonsEng.length; i++) {
-    if (e?.keyCode === +keyCodes[i]) {
+    if (e?.keyCode === 16) {
+      keyboardTextarea.value += `${result + buttonsEng[i].toUpperCase()}`;
+    }
+    else if (e?.keyCode === +keyCodes[i]) {
       keyboardTextarea.value += `${result + buttonsEng[i]}`;
     }
   }
