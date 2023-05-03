@@ -18,12 +18,12 @@ keyboardCherryNeon.classList.add("keyboard_cherry_neon");
 cherryTextareaWrapper.append(keyboardCherryNeon);
 keyboardCherryNeon.href = "https://github.com/lyutails/";
 
-const cherryBranchLeaf = document.createElement('span');
-cherryBranchLeaf.classList.add('keyboard_cherry_branch_leaf');
+const cherryBranchLeaf = document.createElement("span");
+cherryBranchLeaf.classList.add("keyboard_cherry_branch_leaf");
 keyboardCherryNeon.append(cherryBranchLeaf);
 
-const cherryBerries = document.createElement('span');
-cherryBerries.classList.add('keyboard_cherry_berries');
+const cherryBerries = document.createElement("span");
+cherryBerries.classList.add("keyboard_cherry_berries");
 keyboardCherryNeon.append(cherryBerries);
 
 const keyboardTextarea = document.createElement("textarea");
@@ -116,13 +116,38 @@ function typeText(e) {
 
 typeText();
 
+function typeHighlight() {
+  document.onkeyup = function(e) {
+    for (let i = 0; i <= buttonsEng.length; i++) {
+      if (e.key === buttonsEng[i]) {
+        if (document
+          .querySelector(".keyboard_button")
+          .classList.contains("active")) {
+            document
+            .querySelector(".keyboard_button.active")
+            .classList.remove("active");
+          }
+        const kindaButtons = document.querySelectorAll(".keyboard_button");
+        if (kindaButtons[i].textContent === e.key) {
+          kindaButtons[i].classList.add("active");
+          setTimeout(() => {
+            kindaButtons[i].classList.remove("active");
+          }, 500);
+        }
+      }
+    }
+  };
+}
+
+typeHighlight();
+
 function clickText() {
   const result = "";
-  const allButtons = document.querySelectorAll('.keyboard_button');
+  const allButtons = document.querySelectorAll(".keyboard_button");
   for (let i = 0; i < allButtons.length; i++) {
-    allButtons[i].addEventListener('click', () => {
+    allButtons[i].addEventListener("click", () => {
       keyboardTextarea.value += `${result + allButtons[i].textContent}`;
-    })
+    });
   }
 }
 

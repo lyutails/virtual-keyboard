@@ -61,9 +61,9 @@
   --font-color-main: rgb(246, 146, 255);
   --font-color-active: rgb(242, 255, 98);
   --font-color-main-shadow: rgb(235, 16, 255);
-  --font-color-active-shadow: rgb(253, 255, 116);
+  --font-color-active-shadow: rgb(255, 216, 21);
   --font-color-main-border: rgb(153, 0, 167);
-  --font-color-active-border: rgb(135, 128, 0);
+  --font-color-active-border: rgb(255, 161, 20);
   --keyboard-button-color: rgb(179, 255, 242);
   --keyboard-button-background: rgba(179, 255, 242, 0.2);
   --keyboard-button-background-hover: rgba(179, 255, 242, 0.4);
@@ -358,7 +358,7 @@ html {
     -webkit-text-stroke: 0.5px var(--font-color-main-border);
     background-color: var(--keyboard-button-background);
     user-select: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.05s ease-in-out;
 
     &:hover {
       cursor: pointer;
@@ -369,6 +369,13 @@ html {
       color: var(--font-color-active);
       text-shadow: 0 0 10px var(--font-color-active-shadow);
       -webkit-text-stroke: 0.5px var(--font-color-active-border);
+    }
+
+    &.active {
+      color: var(--font-color-active);
+      text-shadow: 0 0 10px var(--font-color-active-shadow);
+      -webkit-text-stroke: 0.5px var(--font-color-active-border);
+      background-color: var(--keyboard-button-background-hover);
     }
   }
 
