@@ -398,3 +398,43 @@ html {
     mix-blend-mode: overlay;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+  html {
+    font-size: 20px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 20px;
+    }
+
+    &_os {
+      font-size: 25px;
+    }
+
+    &_lang {
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 767.98px) {
+  html {
+    font-size: 15px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 15px;
+    }
+
+    &_os {
+      font-size: 20px;
+    }
+
+    &_lang {
+      font-size: 20px;
+    }
+  }
+}
