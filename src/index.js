@@ -54,14 +54,14 @@ class createButtons {
     this.button = button;
   }
 
-  createButton() {
-    for (let i = 0; i < buttonsEng.length; i++) {
-      this.button = document.createElement("div");
-      this.button.textContent = buttonsEng[i];
-      this.button.classList.add("keyboard_button");
-      keyboardPlate.append(this.button);
-    }
-  }
+  // createButton() {
+  //   for (let i = 0; i < buttonsEng.length; i++) {
+  //     this.button = document.createElement("div");
+  //     this.button.textContent = buttonsEng[i];
+  //     this.button.classList.add("keyboard_button");
+  //     keyboardPlate.append(this.button);
+  //   }
+  // }
 
   // createButtonRu() {
   //   for (let i = 0; i < buttonsRu.length; i++) {
@@ -72,18 +72,18 @@ class createButtons {
   //   }
   // }
 
-  // createButton() {
-  //   buttonsEng.forEach((elem) => {
-  //     for (let i = 0; i < elem.length; i++) {
-  //       elem.map((el) => {
-  //         this.button = document.createElement("div");
-  //         this.button.textContent = el;
-  //         this.button.classList.add("keyboard_button");
-  //         keyboardPlate.append(this.button);
-  //       });
-  //     }
-  //   });
-  // }
+  createButton() {
+    buttonsEng.forEach((elem, i) => {
+      const newButtons = [];
+      for (let i = 0; i < elem.length; i++) {
+        this.button = document.createElement("div");
+        this.button.textContent = elem[i];
+        this.button.classList.add("keyboard_button");
+        newButtons.push(this.button);
+      }
+      totalRows[i].append(...newButtons);
+    });
+  }
 }
 
 const keyboardButtons = new createButtons();
@@ -102,10 +102,11 @@ keyboardLang.textContent = "to change language press Ctrl+Alt";
 window.addEventListener("keydown", typeText);
 
 function typeText(e) {
+  const allButtons = document.querySelectorAll(".keyboard_button");
   const result = "";
-  for (let i = 0; i < buttonsEng.length; i++) {
+  for (let i = 0; i < allButtons.length; i++) {
     if (e?.keyCode === +keyCodes[i]) {
-      keyboardTextarea.value += `${result + buttonsEng[i]}`;
+      keyboardTextarea.value += `${result + allButtons[i].textContent}`;
     }
   }
 }
@@ -113,17 +114,19 @@ function typeText(e) {
 typeText();
 
 function typeHighlight() {
-  document.onkeyup = function(e) {
-    for (let i = 0; i <= buttonsEng.length; i++) {
-      if (e.key === buttonsEng[i]) {
-        if (document
-          .querySelector(".keyboard_button")
-          .classList.contains("active")) {
-            document
+  const kindaButtons = document.querySelectorAll(".keyboard_button");
+  document.onkeyup = function (e) {
+    for (let i = 0; i < kindaButtons.length; i++) {
+      if (e.key === kindaButtons[i].textContent) {
+        if (
+          document
+            .querySelector(".keyboard_button")
+            .classList.contains("active")
+        ) {
+          document
             .querySelector(".keyboard_button.active")
             .classList.remove("active");
-          }
-        const kindaButtons = document.querySelectorAll(".keyboard_button");
+        }
         if (kindaButtons[i].textContent === e.key) {
           kindaButtons[i].classList.add("active");
           setTimeout(() => {

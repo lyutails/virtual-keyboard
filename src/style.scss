@@ -298,8 +298,8 @@ html {
   }
 
   &_button {
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
     height: 5vw;
     border: 2px solid var(--textarea-border-color);
     border-radius: 10px;
@@ -329,6 +329,10 @@ html {
       text-shadow: 0 0 10px var(--font-color-active-shadow);
       -webkit-text-stroke: 0.5px var(--font-color-active-border);
       background-color: var(--keyboard-button-background-hover);
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.5vw;
     }
   }
 
@@ -376,12 +380,12 @@ html {
 
 @media screen and (min-width: 360px) and (max-width: 767.98px) {
   html {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .keyboard {
     &_textarea {
-      font-size: 15px;
+      font-size: 12px;
     }
 
     &_os {
