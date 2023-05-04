@@ -36,18 +36,18 @@ const keyboardPlate = document.createElement("div");
 keyboardPlate.classList.add("keyboard_plate");
 keyboardWrapper.append(keyboardPlate);
 
-// const keyboardRows = function () {
-//   const rowsNumber = 5;
-//   for (let i = 0; i < rowsNumber; i++) {
-//     const keyboardRow = document.createElement("div");
-//     keyboardRow.classList.add("keyboard_row");
-//     keyboardPlate.append(keyboardRow);
-//   }
-// };
+const keyboardRows = function () {
+  const rowsNumber = 5;
+  for (let i = 0; i < rowsNumber; i++) {
+    const keyboardRow = document.createElement("div");
+    keyboardRow.classList.add("keyboard_row");
+    keyboardPlate.append(keyboardRow);
+  }
+};
 
-// keyboardRows();
+keyboardRows();
 
-// const totalRows = document.querySelectorAll(".keyboard_row");
+const totalRows = document.querySelectorAll(".keyboard_row");
 
 class createButtons {
   constructor(button) {
@@ -83,10 +83,6 @@ class createButtons {
   //       });
   //     }
   //   });
-
-  //   totalRows.forEach((element, i) => {
-  //     element.append(this.button);
-  //   });
   // }
 }
 
@@ -101,17 +97,14 @@ keyboardOS.textContent = "Win 10";
 const keyboardLang = document.createElement("p");
 keyboardLang.classList.add("keyboard_lang");
 keyboardWrapper.append(keyboardLang);
-keyboardLang.textContent = "to change language press Ctrl+Shift";
+keyboardLang.textContent = "to change language press Ctrl+Alt";
 
 window.addEventListener("keydown", typeText);
 
 function typeText(e) {
   const result = "";
   for (let i = 0; i < buttonsEng.length; i++) {
-    if (e?.keyCode === 16) {
-      keyboardTextarea.value += `${result + buttonsEng[i].toUpperCase()}`;
-    }
-    else if (e?.keyCode === +keyCodes[i]) {
+    if (e?.keyCode === +keyCodes[i]) {
       keyboardTextarea.value += `${result + buttonsEng[i]}`;
     }
   }
