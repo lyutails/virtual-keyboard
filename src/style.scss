@@ -75,9 +75,6 @@ html {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    // display: grid;
-    // grid-template-rows: 5;
-    // grid-template-columns: repeat(14, 1fr);
     margin-top: 80px;
     border: 10px solid var(--textarea-border-color);
     box-shadow: 0 0 30px var(--textarea-border-shadow),
@@ -332,7 +329,7 @@ html {
     }
 
     &:not(:last-child) {
-      margin-right: 0.5vw;
+      margin-right: 0.4vw;
     }
   }
 
@@ -358,14 +355,114 @@ html {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+@media screen and (min-width: 2200px) {
   html {
-    font-size: 20px;
+    font-size: 48px;
   }
 
   .keyboard {
     &_textarea {
-      font-size: 20px;
+      font-size: 48px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1900px) and (max-width: 2199.98px) {
+  html {
+    font-size: 44px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 44px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1700px) and (max-width: 1899.98px) {
+  html {
+    font-size: 36px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 36px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 1699.98px) {
+  html {
+    font-size: 32px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 32px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1499.98px) {
+  html {
+    font-size: 28px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 28px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1299.98px) {
+  html {
+    font-size: 22px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 22px;
     }
 
     &_os {
@@ -378,7 +475,47 @@ html {
   }
 }
 
-@media screen and (min-width: 360px) and (max-width: 767.98px) {
+@media screen and (min-width: 900px) and (max-width: 1099.98px) {
+  html {
+    font-size: 18px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 18px;
+    }
+
+    &_os {
+      font-size: 25px;
+    }
+
+    &_lang {
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 899.98px) {
+  html {
+    font-size: 15px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 15px;
+    }
+
+    &_os {
+      font-size: 25px;
+    }
+
+    &_lang {
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 668px) and (max-width: 767.98px) {
   html {
     font-size: 12px;
   }
@@ -394,6 +531,70 @@ html {
 
     &_lang {
       font-size: 20px;
+    }
+
+    &_plate {
+      border: 8px solid var(--textarea-border-color);
+    }
+
+    &_textarea {
+      border: 8px solid var(--textarea-border-color);
+    }
+  }
+}
+
+@media screen and (min-width: 560px) and (max-width: 667.98px) {
+  html {
+    font-size: 10px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 10px;
+    }
+
+    &_os {
+      font-size: 20px;
+    }
+
+    &_lang {
+      font-size: 20px;
+    }
+
+    &_plate {
+      border: 8px solid var(--textarea-border-color);
+    }
+
+    &_textarea {
+      border: 8px solid var(--textarea-border-color);
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 559.98px) {
+  html {
+    font-size: 6px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 6px;
+    }
+
+    &_os {
+      font-size: 20px;
+    }
+
+    &_lang {
+      font-size: 20px;
+    }
+
+    &_plate {
+      border: 5px solid var(--textarea-border-color);
+    }
+
+    &_textarea {
+      border: 5px solid var(--textarea-border-color);
     }
   }
 }

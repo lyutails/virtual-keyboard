@@ -106,7 +106,8 @@ export const buttonsEng = [
   ";",
   `\'`,
   "Enter"],
-  ["|",
+  [
+  "Shift",
   "z",
   "x",
   "c",
@@ -118,7 +119,7 @@ export const buttonsEng = [
   ".",
   `/`,
   "▲",
-  "Shift"],
+  "|"],
   ["Control",
   "Alt",
   "give some space",

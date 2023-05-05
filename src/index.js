@@ -54,15 +54,6 @@ class createButtons {
     this.button = button;
   }
 
-  // createButton() {
-  //   for (let i = 0; i < buttonsEng.length; i++) {
-  //     this.button = document.createElement("div");
-  //     this.button.textContent = buttonsEng[i];
-  //     this.button.classList.add("keyboard_button");
-  //     keyboardPlate.append(this.button);
-  //   }
-  // }
-
   // createButtonRu() {
   //   for (let i = 0; i < buttonsRu.length; i++) {
   //     this.button = document.createElement("div");
