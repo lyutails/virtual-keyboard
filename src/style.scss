@@ -1,0 +1,852 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+// font-family: 'Play', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
+// font-family: 'Rubik Wet Paint', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+// font-family: 'Silkscreen', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap");
+// font-family: 'Rubik Spray Paint', cursive;
+
+:root {
+  --font-color-main: rgb(246, 146, 255);
+  --font-color-active: rgb(242, 255, 98);
+  --font-color-main-shadow: rgb(235, 16, 255);
+  --font-color-active-shadow: rgb(255, 216, 21);
+  --font-color-main-border: rgb(153, 0, 167);
+  --font-color-active-border: rgb(255, 161, 20);
+  --keyboard-button-color: rgb(179, 255, 242);
+  --keyboard-button-background: rgba(179, 255, 242, 0.2);
+  --keyboard-button-background-hover: rgba(179, 255, 242, 0.4);
+  --keyboard-button-color-active: rgb(148, 5, 50);
+  --textarea-border-color: rgb(179, 255, 242);
+  --textarea-border-shadow: rgb(16, 255, 215);
+  --scroll-color: linear-gradient(rgb(235, 16, 255), rgb(153, 0, 167));
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Silkscreen", cursive;
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--font-color-main);
+  height: 100%;
+}
+
+.keyboard_body::-webkit-scrollbar {
+  width: 15px;
+}
+
+.keyboard_body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.keyboard_body::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  outline: 1px solid transparent;
+  border-radius: 20px;
+}
+
+.keyboard {
+  &_body {
+    width: 100%;
+    background: url("../refs/pics/bricks_wall_005.jpg") no-repeat center center
+      fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  &_wrapper {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_plate {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    border: 10px solid var(--textarea-border-color);
+    box-shadow: 0 0 30px var(--textarea-border-shadow),
+      inset 0 0 30px var(--textarea-border-shadow);
+    border-radius: 20px;
+    padding: 1vw;
+    row-gap: 0.5vw;
+    column-gap: 0.5vw;
+    justify-content: center;
+    align-items: center;
+    z-index: 250;
+  }
+
+  &_row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_cherry_textarea_wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_cherry_neon {
+    width: 25vw;
+    height: 25vw;
+    background-size: contain;
+    margin-top: 100px;
+    // margin-right: 5vw;
+    text-decoration: none;
+    z-index: 150;
+  }
+
+  &_cherry_branch_leaf {
+    width: 25vw;
+    height: 55%;
+    display: inline-block;
+    background-image: url("../refs/icons/cherry_branch_leaf_neon_light_01.svg");
+    background-repeat: no-repeat;
+    resize: both;
+    filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+      drop-shadow(0px 0px 15px rgb(0, 255, 76));
+    animation-name: cherry_branch_leaf_anim;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes cherry_branch_leaf_anim {
+    0% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 15px rgb(0, 255, 76));
+    }
+    15% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.4));
+    }
+    25% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 15px rgba(0, 255, 76, 0.8));
+    }
+    35% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.4));
+    }
+    45% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 15px rgba(0, 255, 76, 1));
+    }
+    55% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.2));
+    }
+    60% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 15px rgba(0, 255, 76, 1));
+    }
+    60% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.2));
+    }
+    65% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 15px rgba(0, 255, 76, 0.8));
+    }
+    75% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.4));
+    }
+    85% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 15px rgba(0, 255, 76, 0.8));
+    }
+    95% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 10px rgba(0, 255, 76, 0.4));
+    }
+    100% {
+      filter: drop-shadow(0px 0px 10px rgb(0, 255, 76))
+        drop-shadow(0px 0px 15px rgba(0, 255, 76, 1));
+    }
+  }
+
+  &_cherry_berries {
+    width: 25vw;
+    height: 45%;
+    display: inline-block;
+    background-image: url("../refs/icons/cherry_berries_neon_light_01.svg");
+    background-repeat: no-repeat;
+    resize: both;
+    transform: translate(0px, -12px);
+    filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+      drop-shadow(0px 0px 15px rgb(255, 0, 93));
+    animation-name: cherry_berries_anim;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes cherry_berries_anim {
+    0% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 15px rgb(255, 0, 93));
+    }
+    15% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.4));
+    }
+    25% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 15px rgba(255, 0, 93, 0.8));
+    }
+    35% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.4));
+    }
+    45% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 15px rgba(255, 0, 93, 1));
+    }
+    55% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.2));
+    }
+    60% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 15px rgba(255, 0, 93, 1));
+    }
+    60% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.2));
+    }
+    65% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 15px rgba(255, 0, 93, 0.8));
+    }
+    75% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.4));
+    }
+    85% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 15px rgba(255, 0, 93, 0.8));
+    }
+    95% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 10px rgba(255, 0, 93, 0.4));
+    }
+    100% {
+      filter: drop-shadow(0px 0px 10px rgb(255, 0, 93))
+        drop-shadow(0px 0px 15px rgba(255, 0, 93, 1));
+    }
+  }
+
+  &_textarea {
+    margin-top: 100px;
+    width: 50vw;
+    background-color: transparent;
+    border: 10px solid var(--textarea-border-color);
+    box-shadow: 0 0 30px var(--textarea-border-shadow),
+      inset 0 0 30px var(--textarea-border-shadow);
+    border-radius: 20px;
+    outline: none;
+    font-family: "Rubik Spray Paint", cursive;
+    font-size: 28px;
+    color: var(--font-color-main);
+    text-shadow: 0 0 10px var(--font-color-main-shadow);
+    -webkit-text-stroke: 0.5px var(--font-color-main-border);
+    padding: 1vw;
+    z-index: 100;
+
+    &::placeholder {
+      animation-name: text_anim;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-play-state: running;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+      text-shadow: 0 0 10px transparent;
+      -webkit-text-stroke: 0.5px transparent;
+    }
+  }
+
+  @keyframes text_anim {
+    0% {
+      color: rgb(246, 146, 255);
+    }
+    50% {
+      color: rgba(246, 146, 255, 0.2);
+    }
+    100% {
+      color: rgb(246, 146, 255);
+    }
+  }
+
+  &_button {
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
+    height: 5vw;
+    border: 2px solid var(--textarea-border-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0 0 10px var(--font-color-main-shadow);
+    -webkit-text-stroke: 0.5px var(--font-color-main-border);
+    background-color: var(--keyboard-button-background);
+    user-select: none;
+    transition: all 0.05s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--keyboard-button-background-hover);
+    }
+
+    &:active {
+      color: var(--font-color-active);
+      text-shadow: 0 0 10px var(--font-color-active-shadow);
+      -webkit-text-stroke: 0.5px var(--font-color-active-border);
+    }
+
+    &.active {
+      color: var(--font-color-active);
+      text-shadow: 0 0 10px var(--font-color-active-shadow);
+      -webkit-text-stroke: 0.5px var(--font-color-active-border);
+      background-color: var(--keyboard-button-background-hover);
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.4vw;
+    }
+  }
+
+  &_os {
+    text-align: center;
+    font-family: "Rubik Wet Paint", cursive;
+    font-size: 30px;
+    user-select: none;
+    mix-blend-mode: overlay;
+    opacity: 0.8;
+  }
+
+  &_lang {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Rubik Wet Paint", cursive;
+    font-size: 30px;
+    user-select: none;
+    mix-blend-mode: overlay;
+    opacity: 0.8;
+  }
+
+  &_cable_one {
+    width: 320px;
+    height: 110px;
+    background-image: url("../refs/pics/cables_01.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    resize: both;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  &_cable_two {
+    width: 30vw;
+    height: 10vw;
+    background-image: url("../refs/pics/cables_02.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    resize: both;
+    left: 0;
+    transform: translate(0px, 80px);
+    z-index: 20;
+  }
+
+  &_cable_three {
+    width: 8vw;
+    height: 8vw;
+    background-image: url("../refs/pics/cables_04.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    resize: both;
+    display: inline-block;
+    position: relative;
+    transform: translate(-10px, -280px) scale(1.24);
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 399.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-6px, 155px) scale(1.3);
+    }
+
+    &_cable_two {
+      width: 200px;
+      height: 60px;
+      transform: translate(-50px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 519.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-6px, 165px) scale(1.3);
+    }
+
+    &_cable_two {
+      width: 250px;
+      height: 70px;
+      transform: translate(-60px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 619.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-6px, 180px) scale(1.3);
+    }
+
+    &_cable_two {
+      width: 300px;
+      height: 80px;
+      transform: translate(-70px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 620px) and (max-width: 779.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-8px, 210px) scale(1.28);
+    }
+
+    &_cable_two {
+      width: 350px;
+      height: 95px;
+      transform: translate(-80px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 780px) and (max-width: 979.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-8px, 240px) scale(1.25);
+    }
+
+    &_cable_two {
+      width: 400px;
+      height: 110px;
+      transform: translate(-100px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 980px) and (max-width: 1189.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-10px, 280px) scale(1.25);
+    }
+
+    &_cable_two {
+      width: 450px;
+      height: 120px;
+      transform: translate(-120px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 1190px) and (max-width: 1349.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-10px, 310px) scale(1.24);
+    }
+
+    &_cable_two {
+      width: 450px;
+      height: 120px;
+      transform: translate(-130px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 1350px) and (max-width: 1549.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-10px, 340px) scale(1.3);
+    }
+
+    &_cable_two {
+      width: 500px;
+      height: 130px;
+      transform: translate(-160px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 1550px) and (max-width: 1749.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-10px, 380px) scale(1.3);
+    }
+
+    &_cable_two {
+      width: 500px;
+      height: 130px;
+      transform: translate(-170px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 1750px) and (max-width: 1949.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-14px, 410px) scale(1.3);
+    }
+
+    &_cable_two {
+      width: 500px;
+      height: 130px;
+      transform: translate(-190px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 1950px) and (max-width: 2249.98px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-14px, 460px) scale(1.3);
+    }
+
+    &_cable_two {
+      width: 600px;
+      height: 150px;
+      transform: translate(-220px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 2250px) and (max-width: 2650px) {
+  .keyboard {
+    &_cable_three {
+      transform: translate(-18px, 520px) scale(1.3);
+    }
+
+    &_cable_two {
+      width: 700px;
+      height: 160px;
+      transform: translate(-250px, 0px);
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 539.98px) {
+  .keyboard {
+    &_body {
+      overflow-x: hidden;
+    }
+
+    &_cable_one {
+      width: 310px;
+      height: 110px;
+      transform: translate(110px, 0px);
+    }
+
+    &_textarea {
+      margin-top: 100px;
+    }
+  }
+}
+
+@media screen and (min-width: 2200px) {
+  html {
+    font-size: 48px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 48px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1900px) and (max-width: 2199.98px) {
+  html {
+    font-size: 44px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 44px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1700px) and (max-width: 1899.98px) {
+  html {
+    font-size: 36px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 36px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 1699.98px) {
+  html {
+    font-size: 32px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 32px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1499.98px) {
+  html {
+    font-size: 28px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 28px;
+    }
+
+    &_os {
+      font-size: 35px;
+    }
+
+    &_lang {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1299.98px) {
+  html {
+    font-size: 22px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 22px;
+    }
+
+    &_os {
+      font-size: 25px;
+    }
+
+    &_lang {
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1099.98px) {
+  html {
+    font-size: 18px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 18px;
+    }
+
+    &_os {
+      font-size: 25px;
+    }
+
+    &_lang {
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 899.98px) {
+  html {
+    font-size: 15px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 15px;
+    }
+
+    &_os {
+      font-size: 25px;
+    }
+
+    &_lang {
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 668px) and (max-width: 767.98px) {
+  html {
+    font-size: 12px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 12px;
+    }
+
+    &_os {
+      font-size: 20px;
+    }
+
+    &_lang {
+      font-size: 20px;
+    }
+
+    &_plate {
+      border: 8px solid var(--textarea-border-color);
+    }
+
+    &_textarea {
+      border: 8px solid var(--textarea-border-color);
+    }
+  }
+}
+
+@media screen and (min-width: 560px) and (max-width: 667.98px) {
+  html {
+    font-size: 10px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 10px;
+    }
+
+    &_os {
+      font-size: 20px;
+    }
+
+    &_lang {
+      font-size: 20px;
+    }
+
+    &_plate {
+      border: 8px solid var(--textarea-border-color);
+    }
+
+    &_textarea {
+      border: 8px solid var(--textarea-border-color);
+    }
+  }
+}
+
+@media screen and (min-width: 420px) and (max-width: 559.98px) {
+  html {
+    font-size: 6px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 6px;
+    }
+
+    &_os {
+      font-size: 20px;
+    }
+
+    &_lang {
+      font-size: 20px;
+    }
+
+    &_plate {
+      border: 5px solid var(--textarea-border-color);
+    }
+
+    &_textarea {
+      border: 5px solid var(--textarea-border-color);
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 419.98px) {
+  html {
+    font-size: 5px;
+  }
+
+  .keyboard {
+    &_textarea {
+      font-size: 5px;
+    }
+
+    &_os {
+      font-size: 20px;
+    }
+
+    &_lang {
+      font-size: 20px;
+    }
+
+    &_plate {
+      border: 5px solid var(--textarea-border-color);
+    }
+
+    &_textarea {
+      border: 5px solid var(--textarea-border-color);
+    }
+  }
+}
