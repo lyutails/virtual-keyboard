@@ -13,6 +13,10 @@ const cherryTextareaWrapper = document.createElement("div");
 cherryTextareaWrapper.classList.add("keyboard_cherry_textarea_wrapper");
 keyboardWrapper.append(cherryTextareaWrapper);
 
+const keyboardCableOne = document.createElement('span');
+keyboardCableOne.classList.add('keyboard_cable_one');
+keyboardWrapper.append(keyboardCableOne);
+
 const keyboardCherryNeon = document.createElement("a");
 keyboardCherryNeon.classList.add("keyboard_cherry_neon");
 cherryTextareaWrapper.append(keyboardCherryNeon);
@@ -26,6 +30,10 @@ const cherryBerries = document.createElement("span");
 cherryBerries.classList.add("keyboard_cherry_berries");
 keyboardCherryNeon.append(cherryBerries);
 
+const keyboardCableThree = document.createElement('span');
+keyboardCableThree.classList.add('keyboard_cable_three');
+cherryTextareaWrapper.append(keyboardCableThree);
+
 const keyboardTextarea = document.createElement("textarea");
 keyboardTextarea.classList.add("keyboard_textarea");
 cherryTextareaWrapper.append(keyboardTextarea);
@@ -35,6 +43,11 @@ keyboardTextarea.placeholder = "Start typing...";
 const keyboardPlate = document.createElement("div");
 keyboardPlate.classList.add("keyboard_plate");
 keyboardWrapper.append(keyboardPlate);
+
+const keyboardCableTwo = document.createElement('div');
+keyboardCableTwo.classList.add('keyboard_cable_two');
+// keyboardPlate.append(keyboardCableTwo);
+keyboardPlate.insertAdjacentElement('afterend', keyboardCableTwo);
 
 const keyboardRows = function () {
   const rowsNumber = 5;
@@ -54,15 +67,6 @@ class createButtons {
     this.button = button;
   }
 
-  // createButtonRu() {
-  //   for (let i = 0; i < buttonsRu.length; i++) {
-  //     this.button = document.createElement("div");
-  //     this.button.textContent = buttonsRu[i];
-  //     this.button.classList.add("keyboard_button");
-  //     keyboardPlate.append(this.button);
-  //   }
-  // }
-
   createButton() {
     buttonsEng.forEach((elem, i) => {
       const newButtons = [];
@@ -75,6 +79,19 @@ class createButtons {
       totalRows[i].append(...newButtons);
     });
   }
+
+  // createButtonRu() {
+  //   buttonsEng.forEach((elem, i) => {
+  //     const newButtons = [];
+  //     for (let i = 0; i < elem.length; i++) {
+  //       this.button = document.createElement("div");
+  //       this.button.textContent = elem[i];
+  //       this.button.classList.add("keyboard_button");
+  //       newButtons.push(this.button);
+  //     }
+  //     totalRows[i].append(...newButtons);
+  //   });
+  // }
 }
 
 const keyboardButtons = new createButtons();
@@ -106,7 +123,7 @@ typeText();
 
 function typeHighlight() {
   const kindaButtons = document.querySelectorAll(".keyboard_button");
-  document.onkeyup = function (e) {
+  document.onkeydown = function (e) {
     for (let i = 0; i < kindaButtons.length; i++) {
       if (e.key === kindaButtons[i].textContent) {
         if (
